@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8"/>
+    <title>web3-service-worker-cache</title>
+		<script>
+			  if ("serviceWorker" in navigator) {
+					navigator.serviceWorker.register("./web3-service-worker-cache.js")
+					.then(reg => console.log("Registration successful", reg))
+					.catch(err => console.log("Registration failed", err));
+			  }
+		</script>
+  </head>
+  <body>
+  </body>
+</html>

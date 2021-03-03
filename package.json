@@ -1,0 +1,38 @@
+{
+  "name": "web3-service-worker-cache",
+  "version": "0.0.1",
+  "description": "A web3 service worker reducing your costly calls to Ethereum full nodes.",
+  "source": "./src/index.mjs",
+  "main": "./dist/web3-service-worker-cache.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"microbundle watch\" \"ssl-serve ./dist --ssl \" \"open https://localhost:5000\"",
+    "build": "microbundle"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimDaub/web3-service-worker-cache.git"
+  },
+  "keywords": [
+    "ethereum",
+    "web3",
+    "caching",
+    "service",
+    "worker",
+    "worker",
+    "cache",
+    "offline",
+    "rpc"
+  ],
+  "author": "Tim Daubenschütz <tim@daubenschuetz.de> (https://timdaub.github.io)",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/TimDaub/web3-service-worker-cache/issues"
+  },
+  "homepage": "https://github.com/TimDaub/web3-service-worker-cache#readme",
+  "devDependencies": {
+    "concurrently": "6.0.0",
+    "microbundle": "0.13.0",
+    "ssl-serve": "github:timdaub/ssl-serve"
+  }
+}
