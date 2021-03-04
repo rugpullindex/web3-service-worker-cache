@@ -6,7 +6,7 @@
   "main": "./dist/web3-service-worker-cache.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"microbundle watch\" \"ssl-serve ./dist --ssl \" \"open https://localhost:5000\"",
+    "dev": "concurrently \"microbundle watch\" \"ssl-serve ./dist --ssl\"",
     "build": "microbundle"
   },
   "repository": {
@@ -33,6 +33,6 @@
   "devDependencies": {
     "concurrently": "6.0.0",
     "microbundle": "0.13.0",
-    "ssl-serve": "github:timdaub/ssl-serve"
+    "ssl-serve": "6.5.8"
   }
 }
