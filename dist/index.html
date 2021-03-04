@@ -4,12 +4,28 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8"/>
     <title>web3-service-worker-cache</title>
-		<script>
-			  if ("serviceWorker" in navigator) {
-					navigator.serviceWorker.register("./web3-service-worker-cache.js")
-					.then(reg => console.log("Registration successful", reg))
-					.catch(err => console.log("Registration failed", err));
-			  }
+		<script type="module">
+      import Web3Worker from "./web3-service-worker-cache.module.js";
+      (async () => {
+        var web3Worker = new Web3Worker();
+        await web3Worker.register();
+
+        var endpoint = 'https://rpc.slock.it/mainnet';
+        var txid = '0x671ab3629556949be9c4b4e68787977bca334add4b65d026cd94d21cba96b0e4';
+
+        await fetch(endpoint, {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            method: 'eth_getTransactionByHash',
+            params: [txid],
+            id: 1,
+            jsonrpc: '2.0',
+          }),
+        })
+      })();
 		</script>
   </head>
   <body>

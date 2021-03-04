@@ -4,10 +4,14 @@
   "description": "A web3 service worker reducing your costly calls to Ethereum full nodes.",
   "source": "./src/index.mjs",
   "main": "./dist/web3-service-worker-cache.js",
+  "module": "./dist/web3-service-worker-cache.module.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"microbundle watch\" \"ssl-serve ./dist --ssl\"",
-    "build": "microbundle"
+    "dev": "concurrently \"npm run watch:sw\" \"npm run watch:module\" \"ssl-serve ./dist --ssl\"",
+    "watch:sw": "microbundle watch -f iife --external none src/sw.mjs",
+    "watch:module": "microbundle watch -f es src/index.mjs",
+    "build:sw": "microbundle -f iife --external none src/sw.mjs",
+    "build:module": "microbundle -f es src/index.mjs",
+    "build": "npm run build:sw && npm run build:module"
   },
   "repository": {
     "type": "git",
