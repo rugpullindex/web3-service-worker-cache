@@ -6,7 +6,7 @@
   "main": "./dist/web3-service-worker-cache.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"microbundle watch\" \"ssl-serve ./dist --ssl \" \"open https://localhost:5000\"",
+    "dev": "concurrently \"microbundle watch\" \"ssl-serve ./dist --ssl\"",
     "build": "microbundle"
   },
   "repository": {
