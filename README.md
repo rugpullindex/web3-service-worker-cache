@@ -53,6 +53,19 @@ e.g. the existence of a new transaction or block):
 - `eth_estimateGas`
 - `eth_getStorageAt`
 
+## Debugging
+
+### Mozilla Firefox
+
+To see the messages a service worker is logging, in Firefox got to [this
+page](about:debugging#/runtime/this-firefox), find your worker and click
+"Inspect".
+
+### Google Chrome
+
+[Tutorial](https://deanhume.com/testing-service-workers-locally-with-self-signed-certificates/)
+on how to use service workers in Google Chrome with self-signed certificates.
+
 ## Note on Completeness
 
 - This project is a work in progress
