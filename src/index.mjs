@@ -1,10 +1,10 @@
 // @format
-import pkg from '../package.json';
-import {basename} from './utils.mjs';
+import pkg from "../package.json";
+import { basename } from "./utils.mjs";
 
 class Web3Worker {
   async register() {
-    if ('serviceWorker' in navigator) {
+    if ("serviceWorker" in navigator) {
       const sw = basename(pkg.main);
 
       try {
@@ -13,7 +13,7 @@ class Web3Worker {
         console.error(err);
       }
     } else {
-      throw new Error('Service Worker not supported by browser');
+      throw new Error("Service Worker not supported by browser");
     }
   }
 }
